@@ -19,8 +19,22 @@ namespace HairSalon.Controllers
     [HttpGet("index/{id}")]
     public ActionResult Index(int id)
     {
-      Client model = _db.Clients.Where(client => client.StylistId == id).FirstOrDefault<Client>();
+      List<Client> model = _db.Clients.Where(client => client.StylistId == id).ToList();
       return View(model);
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Client client)
+    {
+      _db.Clients.Add(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index", "Stylist");
     }
   }
 }
