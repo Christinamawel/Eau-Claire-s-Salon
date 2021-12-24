@@ -6,17 +6,16 @@ namespace HairSalon.Models
   {
     public Client()
     {
-      this.Appointment = new List<Appointment>{};
+      this.Appointment = new HashSet<Appointment>{};
     }
 
     public int ClientId { get; set; }
     public string Name { get; set; }
     public int StylistId { get; set; }
     public virtual Stylist Stylist { get; set; }
+    public int Id { get; }
+    public virtual ICollection<Appointment> Appointment { get; set; }
 
-    public void AddAppointment(Appointment app)
-    {
-      Appointment.Add(app);
-    }
+
   }
 }
