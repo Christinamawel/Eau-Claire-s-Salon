@@ -15,7 +15,5 @@ namespace HairSalon.Models
     public virtual Stylist Stylist { get; set; }
     public int Id { get; }
     public virtual ICollection<Appointment> Appointment { get; set; }
-
-
   }
 }
