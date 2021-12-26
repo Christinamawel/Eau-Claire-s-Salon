@@ -19,7 +19,7 @@
 
 _A project made for week 3 of Epicodus Schools C# and .net course to showcase knowledge of sql database integration. it tracks stylists for a mock salon and each stylists clients for a one to many database relationship._
 
-![schema design](HairSalon/wwwroot/img/schema.png)
+![schema design](HairSalon/wwwroot/img/schema.jpg)
 
 ## Setup/Installation Requirements
 
