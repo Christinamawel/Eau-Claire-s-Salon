@@ -14,7 +14,7 @@
   @Html.TextBoxFor(model => model.DateStarted, "{0:yyyy-MM-dd}", new {@type = "date"})
 
   @Html.LabelFor(model => model.Pay)
-  @Html.TextBoxFor(model => model.Pay, new { type = "number"})
+  @Html.TextBoxFor(model => model.Pay, new { type = "decimal"})
 
   <input type="submit" value="Add new stylist" />
 }

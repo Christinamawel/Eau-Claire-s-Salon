@@ -16,7 +16,7 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
-    [HttpGet("index/{id}")]
+    [HttpGet("Index/{id}")]
     public ActionResult Index(int id)
     {
       List<Client> model = _db.Clients.Where(client => client.StylistId == id).ToList();
@@ -35,6 +35,13 @@ namespace HairSalon.Controllers
       _db.Clients.Add(client);
       _db.SaveChanges();
       return RedirectToAction("Index", "Stylist");
+    }
+
+    [HttpGet("Details/{id}")]
+    public ActionResult Details(int id)
+    {
+      List<Appointment> model = _db.Appointments.Where(appointment => appointment.ClientId == id).ToList();
+      return View(model);
     }
   }
 }

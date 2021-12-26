@@ -7,7 +7,9 @@ namespace HairSalon.Models
   {
     public int AppointmentId { get; set; }
     public DateTime TimeAndDate { get; set; }
-    public int AppointmentCost { get; set; }
+    public Decimal AppointmentCost { get; set; }
     public int Paid { get; set; }
+    public int ClientId { get; set; }
+    public virtual Client Client { get; set; }
   }
 }
