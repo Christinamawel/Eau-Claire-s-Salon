@@ -16,10 +16,19 @@ namespace HairSalon.Controllers
       _db = db;
     }
 
-    public ActionResult Create()
+    [HttpGet("Create/{id}")]
+    public ActionResult Create(int id)
     {
-      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
+      ViewBag.Client = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       return View();
+    }
+
+    [HttpPost("Create/{id}")]
+    public ActionResult Create(Appointment app)
+    {
+      _db.Appointments.Add(app);
+      _db.SaveChanges();
+      return RedirectToAction("Index", "Stylist");
     }
   }
 }

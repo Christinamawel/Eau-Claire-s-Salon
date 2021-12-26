@@ -40,6 +40,7 @@ namespace HairSalon.Controllers
     [HttpGet("Details/{id}")]
     public ActionResult Details(int id)
     {
+      ViewBag.ClientId = id;
       List<Appointment> model = _db.Appointments.Where(appointment => appointment.ClientId == id).ToList();
       return View(model);
     }

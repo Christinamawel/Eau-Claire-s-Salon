@@ -9,6 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.Paid)
+    @Html.HiddenFor(model => model.Client, new {@value = @ViewBag.Client})
 
     @Html.LabelFor(model => model.TimeAndDate)
     @Html.TextBoxFor(model => model.TimeAndDate, new {@type = "date"})
@@ -16,9 +17,6 @@
     @Html.LabelFor(model => model.AppointmentCost)
     @Html.TextBoxFor(model => model.AppointmentCost, new { type = "decimal"})
 
-    @Html.LabelFor(model => model.Client)
-    @Html.DropDownList("ClientId")
-
-    <input type="submit" value="Add new client" class="btn btn-default" />
+    <input type="submit" value="Add new appointment" class="btn btn-default" />
 }
 <p>@Html.ActionLink("back to Stylist list", "Index", "Stylist")</p>

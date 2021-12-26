@@ -28,4 +28,4 @@
 }
 </ul>
 
-<p>@Html.ActionLink("Add new appointment", "Create", "Appointment")</p>
+<p>@Html.ActionLink("Add new appointment", "Create", "Appointment", new { id = @ViewBag.ClientId })</p>
