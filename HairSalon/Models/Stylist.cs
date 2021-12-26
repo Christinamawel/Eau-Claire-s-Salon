@@ -12,8 +12,8 @@ namespace HairSalon.Models
 
     public int StylistId { get; set; }
     public string Name { get; set; }
-    // public DateTime DateStarted { get; set; }
-    // public Decimal Pay { get; set; }
+    public DateTime DateStarted { get; set; }
+    public Decimal Pay { get; set; }
 
     public virtual ICollection<Client> Clients { get; set; }
   }
